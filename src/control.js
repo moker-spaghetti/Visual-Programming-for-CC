@@ -1,6 +1,18 @@
 //introduce blockly into div
+var toolbox;
+var xhr = new XMLHttpRequest();
+xhr.open('GET','src/blockly_base/toolbox.xml',false);
+xhr.addEventListener('loadend',function(){
+	if (xhr.status === 200 || xhr.status === 0){
+		toolbox = xhr.responseText;
+	} else {
+		console.error("Failed to get toolbox.xml");
+	}
+})
+xhr.send(null);
+
 var options = { 
-	toolbox : document.getElementById('toolbox'), 
+	toolbox : toolbox, 
 	collapse : true, 
 	comments : true, 
 	disable : true, 
