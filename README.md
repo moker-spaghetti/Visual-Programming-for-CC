@@ -1,7 +1,7 @@
-#Visual Programming for CC  
+# Visual Programming for CC  
 
-##About  
+## About  
 Visual programming environment for computer craft, minecraft mod.  
 
-##license  
+## license  
 see License.html
