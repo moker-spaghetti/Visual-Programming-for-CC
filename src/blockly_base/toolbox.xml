@@ -387,19 +387,23 @@
     <block type="turtle_refuel">
       <field name="itemCount">64</field>
     </block>
-    <block type="turtle_getselectedslot"></block>
-    <block type="turtle_getitemcount">
-      <field name="slotNum">1</field>
-    </block>
-    <block type="turtle_getitemspace">
-      <field name="slotNum">1</field>
-    </block>
-    <block type="turtle_getitemdetail">
-      <field name="slotNum">1</field>
-    </block>
+    <block type="turtle_getitemcount"></block>
+    <block type="turtle_getitemspace"></block>
+    <block type="turtle_getitemdetail"></block>
     <block type="turtle_inspect">
       <field name="func">inspect</field>
     </block>
+    <block type="turtle_getfuellevel"></block>
+  </category>
+  <category name="Turtle(Adv)">
+    <block type="turtle_ad_select"></block>
+    <block type="turtle_ad_drop">
+      <field name="func">drop</field>
+    </block>
+    <block type="turtle_ad_suck">
+      <field name="func">suck</field>
+    </block>
+    <block type="turtle_ad_transferto"></block>
     <block type="turtle_func">
       <field name="func">forward()</field>
     </block>

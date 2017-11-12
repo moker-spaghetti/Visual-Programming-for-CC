@@ -37,19 +37,6 @@ Blockly.Blocks['turtle_select'] = {
   }
 };
 
-Blockly.Blocks['turtle_equip'] = {
-  init: function() {
-    this.appendDummyInput()
-        .appendField("equip tool on")
-        .appendField(new Blockly.FieldDropdown([["right","Right"], ["left","Left"]]), "side");
-    this.setPreviousStatement(true, null);
-    this.setNextStatement(true, null);
-    this.setColour(230);
- this.setTooltip("");
- this.setHelpUrl("");
-  }
-};
-
 Blockly.Blocks['turtle_attack'] = {
   init: function() {
     this.appendDummyInput()
@@ -148,36 +135,10 @@ Blockly.Blocks['turtle_transferto'] = {
   }
 };
 
-Blockly.Blocks['turtle_craft'] = {
-  init: function() {
-    this.appendDummyInput()
-        .appendField("craft")
-        .appendField(new Blockly.FieldNumber(64, 1, 64, 1), "itemCount")
-        .appendField("Items");
-    this.setPreviousStatement(true, null);
-    this.setNextStatement(true, null);
-    this.setColour(230);
- this.setTooltip("");
- this.setHelpUrl("");
-  }
-};
-
-Blockly.Blocks['turtle_getselectedslot'] = {
-  init: function() {
-    this.appendDummyInput()
-        .appendField("Currently selected slot num");
-    this.setOutput(true, "Number");
-    this.setColour(230);
- this.setTooltip("");
- this.setHelpUrl("");
-  }
-};
-
 Blockly.Blocks['turtle_getitemcount'] = {
   init: function() {
     this.appendDummyInput()
-        .appendField("item number of slot")
-        .appendField(new Blockly.FieldNumber(1, 1, 16, 1), "slotNum");
+        .appendField("item number of selected slot");
     this.setOutput(true, "Number");
     this.setColour(230);
  this.setTooltip("");
@@ -188,8 +149,7 @@ Blockly.Blocks['turtle_getitemcount'] = {
 Blockly.Blocks['turtle_getitemspace'] = {
   init: function() {
     this.appendDummyInput()
-        .appendField("item space of slot")
-        .appendField(new Blockly.FieldNumber(1, 1, 16, 1), "slotNum");
+        .appendField("item space of selected slot");
     this.setOutput(true, "Number");
     this.setColour(230);
  this.setTooltip("");
@@ -200,21 +160,8 @@ Blockly.Blocks['turtle_getitemspace'] = {
 Blockly.Blocks['turtle_getitemdetail'] = {
   init: function() {
     this.appendDummyInput()
-        .appendField("item detail of slot")
-        .appendField(new Blockly.FieldNumber(1, 1, 16, 1), "slotNum");
+        .appendField("item detail of selected slot");
     this.setOutput(true, "Array");
-    this.setColour(230);
- this.setTooltip("");
- this.setHelpUrl("");
-  }
-};
-
-Blockly.Blocks['turtle_detect'] = {
-  init: function() {
-    this.appendDummyInput()
-        .appendField("whether block exists in")
-        .appendField(new Blockly.FieldDropdown([["forward","detect"], ["up","detectUp"], ["down","detectDown"]]), "func");
-    this.setOutput(true, "Boolean");
     this.setColour(230);
  this.setTooltip("");
  this.setHelpUrl("");
@@ -252,6 +199,82 @@ Blockly.Blocks['turtle_var'] = {
         .appendField("turtle.")
         .appendField(new Blockly.FieldTextInput("forward()"), "func");
     this.setOutput(true, null);
+    this.setColour(230);
+ this.setTooltip("");
+ this.setHelpUrl("");
+  }
+};
+
+Blockly.Blocks['turtle_getfuellevel'] = {
+  init: function() {
+    this.appendDummyInput()
+        .appendField("fuel level");
+    this.setOutput(true, "Number");
+    this.setColour(230);
+ this.setTooltip("");
+ this.setHelpUrl("");
+  }
+};
+
+Blockly.Blocks['turtle_ad_select'] = {
+  init: function() {
+    this.appendValueInput("slotNum")
+        .setCheck("Number")
+        .appendField("select slot");
+    this.setInputsInline(true);
+    this.setPreviousStatement(true, null);
+    this.setNextStatement(true, null);
+    this.setColour(230);
+ this.setTooltip("");
+ this.setHelpUrl("");
+  }
+};
+
+Blockly.Blocks['turtle_ad_drop'] = {
+  init: function() {
+    this.appendValueInput("itemCount")
+        .setCheck("Number")
+        .appendField("drop");
+    this.appendDummyInput()
+        .appendField("items at")
+        .appendField(new Blockly.FieldDropdown([["forward","drop"], ["up","dropUp"], ["down","dropDown"]]), "func");
+    this.setInputsInline(true);
+    this.setPreviousStatement(true, null);
+    this.setNextStatement(true, null);
+    this.setColour(230);
+ this.setTooltip("");
+ this.setHelpUrl("");
+  }
+};
+
+Blockly.Blocks['turtle_ad_suck'] = {
+  init: function() {
+    this.appendValueInput("itemCount")
+        .setCheck("Number")
+        .appendField("suck");
+    this.appendDummyInput()
+        .appendField("items at")
+        .appendField(new Blockly.FieldDropdown([["forward","suck"], ["up","suckUp"], ["down","suckDown"]]), "func");
+    this.setInputsInline(true);
+    this.setPreviousStatement(true, null);
+    this.setNextStatement(true, null);
+    this.setColour(230);
+ this.setTooltip("");
+ this.setHelpUrl("");
+  }
+};
+
+Blockly.Blocks['turtle_ad_transferto'] = {
+  init: function() {
+    this.appendValueInput("itemCount")
+        .setCheck("Number")
+        .appendField("transfer");
+    this.appendValueInput("slotNum")
+        .setCheck("Number")
+        .appendField("items to slot");
+    this.setInputsInline(true);
+    this.setPreviousStatement(true, null);
+    this.setNextStatement(true, null);
     this.setColour(230);
  this.setTooltip("");
  this.setHelpUrl("");

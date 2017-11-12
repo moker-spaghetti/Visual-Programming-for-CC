@@ -19,13 +19,6 @@ Blockly.Lua['turtle_select'] = function(block) {
   return code;
 };
 
-Blockly.Lua['turtle_equip'] = function(block) {
-  var dropdown_side = block.getFieldValue('side');
-  // TODO: Assemble Lua into code variable.
-  var code = `turtle.equip${dropdown_side}()\n`;
-  return code;
-};
-
 Blockly.Lua['turtle_attack'] = function(block) {
   var dropdown_func = block.getFieldValue('func');
   // TODO: Assemble Lua into code variable.
@@ -78,48 +71,23 @@ Blockly.Lua['turtle_transferto'] = function(block) {
   return code;
 };
 
-Blockly.Lua['turtle_craft'] = function(block) {
-  var number_itemcount = block.getFieldValue('itemCount');
-  // TODO: Assemble Lua into code variable.
-  var code = `turtle.craft(${number_itemcount})\n`;
-  return code;
-};
-
-Blockly.Lua['turtle_getselectedslot'] = function(block) {
-  // TODO: Assemble Lua into code variable.
-  var code = `turtle.getSelectedSlot()`;
-  // TODO: Change ORDER_NONE to the correct strength.
-  return [code, Blockly.Lua.ORDER_NONE];
-};
-
 Blockly.Lua['turtle_getitemcount'] = function(block) {
-  var number_slotnum = block.getFieldValue('slotNum');
   // TODO: Assemble Lua into code variable.
-  var code = `turtle.getItemCount(${number_slotnum})`;
+  var code = 'turtle.getItemCount()';
   // TODO: Change ORDER_NONE to the correct strength.
   return [code, Blockly.Lua.ORDER_NONE];
 };
 
 Blockly.Lua['turtle_getitemspace'] = function(block) {
-  var number_slotnum = block.getFieldValue('slotNum');
   // TODO: Assemble Lua into code variable.
-  var code = `turtle.getItemSpace(${number_slotnum})`;
+  var code = 'turtle.getItemSpace()';
   // TODO: Change ORDER_NONE to the correct strength.
   return [code, Blockly.Lua.ORDER_NONE];
 };
 
 Blockly.Lua['turtle_getitemdetail'] = function(block) {
-  var number_slotnum = block.getFieldValue('slotNum');
   // TODO: Assemble Lua into code variable.
-  var code = `turtle.getItemDetail(${number_slotnum})`;
-  // TODO: Change ORDER_NONE to the correct strength.
-  return [code, Blockly.Lua.ORDER_NONE];
-};
-
-Blockly.Lua['turtle_detect'] = function(block) {
-  var dropdown_func = block.getFieldValue('func');
-  // TODO: Assemble Lua into code variable.
-  var code = `turtle.${dropdown_func}()`;
+  var code = 'turtle.getItemDetail()';
   // TODO: Change ORDER_NONE to the correct strength.
   return [code, Blockly.Lua.ORDER_NONE];
 };
@@ -145,4 +113,42 @@ Blockly.Lua['turtle_var'] = function(block) {
   var code = `turtle.${text_func}`;
   // TODO: Change ORDER_NONE to the correct strength.
   return [code, Blockly.Lua.ORDER_NONE];
+};
+
+Blockly.Lua['turtle_getfuellevel'] = function(block) {
+  // TODO: Assemble Lua into code variable.
+  var code = 'turtle.getFuelLevel()';
+  // TODO: Change ORDER_NONE to the correct strength.
+  return [code, Blockly.Lua.ORDER_NONE];
+};
+
+Blockly.Lua['turtle_ad_select'] = function(block) {
+  var value_slotnum = Blockly.Lua.valueToCode(block, 'slotNum', Blockly.Lua.ORDER_ATOMIC);
+  // TODO: Assemble Lua into code variable.
+  var code = `turtle.select(${value_slotnum})\n`;
+  return code;
+};
+
+Blockly.Lua['turtle_ad_drop'] = function(block) {
+  var value_itemcount = Blockly.Lua.valueToCode(block, 'itemCount', Blockly.Lua.ORDER_ATOMIC);
+  var dropdown_func = block.getFieldValue('func');
+  // TODO: Assemble Lua into code variable.
+  var code = `turtle.${dropdown_func}(${value_itemcount})\n`;
+  return code;
+};
+
+Blockly.Lua['turtle_ad_suck'] = function(block) {
+  var value_itemcount = Blockly.Lua.valueToCode(block, 'itemCount', Blockly.Lua.ORDER_ATOMIC);
+  var dropdown_func = block.getFieldValue('func');
+  // TODO: Assemble Lua into code variable.
+  var code = `turtle.${dropdown_func}(${value_itemcount})\n`;
+  return code;
+};
+
+Blockly.Lua['turtle_ad_transferto'] = function(block) {
+  var value_itemcount = Blockly.Lua.valueToCode(block, 'itemCount', Blockly.Lua.ORDER_ATOMIC);
+  var value_slotnum = Blockly.Lua.valueToCode(block, 'slotNum', Blockly.Lua.ORDER_ATOMIC);
+  // TODO: Assemble Lua into code variable.
+  var code = `turtle.transferTo(${value_slotnum},${value_itemcount})\n`;
+  return code;
 };
