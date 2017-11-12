@@ -26,7 +26,7 @@
       <field name="MODE">WHILE</field>
     </block>
     <block type="controls_for">
-      <field name="VAR" id="tHji=8^,xzE6J?n{aD7U" variabletype="">i</field>
+      <field name="VAR" id="e=,_`utU8o_1k!2kQj8/" variabletype="">i</field>
       <value name="FROM">
         <shadow type="math_number">
           <field name="NUM">1</field>
@@ -44,7 +44,7 @@
       </value>
     </block>
     <block type="controls_forEach">
-      <field name="VAR" id="BDLUeenTvbE?;z{(dHR-" variabletype="">j</field>
+      <field name="VAR" id="fEgqyH_v[LzUi]cSr23/" variabletype="">j</field>
     </block>
     <block type="controls_flow_statements">
       <field name="FLOW">BREAK</field>
@@ -156,7 +156,7 @@
       <field name="WHERE">FROM_START</field>
       <value name="VALUE">
         <block type="variables_get">
-          <field name="VAR" id="i.qLr_zgGA3B#r@*0{c7" variabletype="">text</field>
+          <field name="VAR" id="f)97/?yf20A%[W4@ys4B" variabletype="">text</field>
         </block>
       </value>
     </block>
@@ -164,7 +164,7 @@
       <field name="TEXT"></field>
     </block>
     <block type="text_append">
-      <field name="VAR" id="36@DQc/b68~$-O[*t,?X" variabletype="">item</field>
+      <field name="VAR" id="d+.[B#]Zm*?UeE13?RXj" variabletype="">item</field>
       <value name="TEXT">
         <shadow type="text">
           <field name="TEXT"></field>
@@ -189,7 +189,7 @@
       <field name="END">FIRST</field>
       <value name="VALUE">
         <block type="variables_get">
-          <field name="VAR" id="i.qLr_zgGA3B#r@*0{c7" variabletype="">text</field>
+          <field name="VAR" id="f)97/?yf20A%[W4@ys4B" variabletype="">text</field>
         </block>
       </value>
       <value name="FIND">
@@ -207,7 +207,7 @@
       <field name="WHERE2">FROM_START</field>
       <value name="STRING">
         <block type="variables_get">
-          <field name="VAR" id="i.qLr_zgGA3B#r@*0{c7" variabletype="">text</field>
+          <field name="VAR" id="f)97/?yf20A%[W4@ys4B" variabletype="">text</field>
         </block>
       </value>
     </block>
@@ -249,7 +249,7 @@
       <field name="END">FIRST</field>
       <value name="VALUE">
         <block type="variables_get">
-          <field name="VAR" id="p;4NFVX.,pXFi`s?Z^(c" variabletype="">list</field>
+          <field name="VAR" id="=LeuiTd?Mi~!zE~xKL5m" variabletype="">list</field>
         </block>
       </value>
     </block>
@@ -274,7 +274,7 @@
       <field name="WHERE">FROM_START</field>
       <value name="VALUE">
         <block type="variables_get">
-          <field name="VAR" id="p;4NFVX.,pXFi`s?Z^(c" variabletype="">list</field>
+          <field name="VAR" id="=LeuiTd?Mi~!zE~xKL5m" variabletype="">list</field>
         </block>
       </value>
     </block>
@@ -284,7 +284,7 @@
       <field name="WHERE">FROM_START</field>
       <value name="LIST">
         <block type="variables_get">
-          <field name="VAR" id="p;4NFVX.,pXFi`s?Z^(c" variabletype="">list</field>
+          <field name="VAR" id="=LeuiTd?Mi~!zE~xKL5m" variabletype="">list</field>
         </block>
       </value>
     </block>
@@ -294,7 +294,7 @@
       <field name="WHERE2">FROM_START</field>
       <value name="LIST">
         <block type="variables_get">
-          <field name="VAR" id="p;4NFVX.,pXFi`s?Z^(c" variabletype="">list</field>
+          <field name="VAR" id="=LeuiTd?Mi~!zE~xKL5m" variabletype="">list</field>
         </block>
       </value>
     </block>
@@ -353,15 +353,61 @@
     </block>
   </category>
   <sep></sep>
-  <category name="Variables" colour="#A65C81" custom="VARIABLE"></category>
-  <category name="Functions" colour="#9A5CA6" custom="PROCEDURE"></category>
-  <sep></sep>
-  <category name="CC" colour="#93a55b">
+  <category name="Turtle">
     <block type="turtle_move">
       <field name="direction">forward</field>
     </block>
     <block type="turtle_turn">
-      <field name="side">Right</field>
+      <field name="direction">Right</field>
+    </block>
+    <block type="turtle_attack">
+      <field name="func">attack</field>
+    </block>
+    <block type="turtle_dig">
+      <field name="func">dig</field>
+    </block>
+    <block type="turtle_place">
+      <field name="func">place</field>
+    </block>
+    <block type="turtle_drop">
+      <field name="itemCount">64</field>
+      <field name="func">drop</field>
+    </block>
+    <block type="turtle_suck">
+      <field name="itemCount">64</field>
+      <field name="func">suck</field>
+    </block>
+    <block type="turtle_transferto">
+      <field name="itemCount">64</field>
+      <field name="slotNum">1</field>
+    </block>
+    <block type="turtle_select">
+      <field name="slotNum">1</field>
+    </block>
+    <block type="turtle_refuel">
+      <field name="itemCount">64</field>
+    </block>
+    <block type="turtle_getselectedslot"></block>
+    <block type="turtle_getitemcount">
+      <field name="slotNum">1</field>
+    </block>
+    <block type="turtle_getitemspace">
+      <field name="slotNum">1</field>
+    </block>
+    <block type="turtle_getitemdetail">
+      <field name="slotNum">1</field>
+    </block>
+    <block type="turtle_inspect">
+      <field name="func">inspect</field>
+    </block>
+    <block type="turtle_func">
+      <field name="func">forward()</field>
+    </block>
+    <block type="turtle_var">
+      <field name="func">forward()</field>
     </block>
   </category>
+  <sep></sep>
+  <category name="Variables" colour="#A65C81" custom="VARIABLE"></category>
+  <category name="Functions" colour="#9A5CA6" custom="PROCEDURE"></category>
 </xml>
