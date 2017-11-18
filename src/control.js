@@ -41,35 +41,25 @@ var options = {
 		scaleSpeed : 1.2
 	}
 };
+
 var workspace = Blockly.inject('blocklyContents', options);
-
-
 var luaTextArea = document.getElementById('luaTextArea');
-
 
 //realtime
 function onWorkspaceUpdate(event){
 	//lua transating
 	var luaText = Blockly.Lua.workspaceToCode(workspace);
 	luaTextArea.value = luaText;
-
-	//saveXmlLink
-	var xml = Blockly.Xml.workspaceToDom(workspace);
-	var xmlText = Blockly.Xml.domToText(xml);
-	var xmlBlob = new Blob([xmlText],{type:"application/xml"});
-	var saveXmlLink = document.getElementById('saveXmlLink');
-	saveXmlLink.href = window.URL.createObjectURL(xmlBlob);
-
-	//saveLuaLink
-	var luaBlob = new Blob([luaText],{type:"application/x-lua"});
-	var saveLuaLink = document.getElementById("saveLuaLink");
-	saveLuaLink.href = window.URL.createObjectURL(luaBlob);
 }
 workspace.addChangeListener(onWorkspaceUpdate);
 
 //open workspace
 var openXmlButton = document.getElementById('openXmlButton');
-openXmlButton.addEventListener('change',function(event){
+var openXmlInput = document.getElementById('openXmlInput');
+openXmlButton.addEventListener('click',function(event){
+	openXmlInput.click()
+});
+openXmlInput.addEventListener('change',function(event){
 	var file = event.target.files[0];
 	var reader = new FileReader();
 	reader.readAsText(file);
@@ -79,6 +69,26 @@ openXmlButton.addEventListener('change',function(event){
 		Blockly.Xml.domToWorkspace(xml, workspace);
 	}
 },false);
+
+//save workspace
+var saveXmlButton = document.getElementById('saveXmlButton');
+saveXmlButton.addEventListener('click',function(event){
+	var xml = Blockly.Xml.workspaceToDom(workspace);
+	var xmlText = Blockly.Xml.domToText(xml);
+	var xmlBlob = new Blob([xmlText],{type:"text/xml"});
+	var saveXmlLink = document.getElementById('saveXmlLink');
+	saveXmlLink.href = window.URL.createObjectURL(xmlBlob);
+	saveXmlLink.click()
+});
+
+//save lua
+var saveLuaButton = document.getElementById('saveLuaButton');
+saveLuaButton.addEventListener('click',function(){
+	var luaBlob = new Blob([luaTextArea.value],{type:"application/x-lua"});
+	var saveLuaLink = document.getElementById("saveLuaLink");
+	saveLuaLink.href = window.URL.createObjectURL(luaBlob);
+	saveLuaLink.click();
+});
 
 //copy lua
 var copyLuaButton = document.getElementById('copyLuaButton');

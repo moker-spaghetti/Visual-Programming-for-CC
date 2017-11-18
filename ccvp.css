@@ -16,12 +16,11 @@
 	display: flex;
 	justify-content: space-between;
 }
-.blocklyForm{
-	display: inline;
+.openXmlButton{
+	width: 75px;
 }
-.blocklyForm *{
-	margin-right: 10px;
-	margin-left: 10px;
+.saveXmlButton{
+	width:75px;
 }
 .blocklyContents{
 	flex: 1;
@@ -37,12 +36,11 @@
 	display: flex;
 	justify-content: space-between;
 }
-.luaForm{
-	display:inline;
+.saveLuaButton{
+	width:75px;
 }
-.luaForm *{
-	margin-right: 10px;
-	margin-left: 10px;
+.copyLuaButton{
+	width:75px;
 }
 .luaContents{
 	flex: 1;

@@ -12,20 +12,25 @@
 		<div class="blocklyArea">
 			<div class="blocklyMenu">
 				<b>Blockly</b>
-				<form class="blocklyForm">
-					Load:<input id="openXmlButton" type="file" accept="application/xml"></input>
-					<a id="saveXmlLink" download="workspace.xml">Save</a>
-				</form>
+				<div>
+					<BUTTON class="openXmlButton" id="openXmlButton">Load</BUTTON>
+					<BUTTON class="saveXmlButton" id="saveXmlButton">Save</BUTTON>
+					<form>
+						<input id="openXmlInput" type="file" accept="text/xml" style="display:none;">
+					</form>
+					<a id="saveXmlLink" download="workspace.xml" style="display:none;"></a>
+				</div>
 			</div>
 			<div id="blocklyContents" class="blocklyContents"></div>
 		</div>
 		<div class="luaArea">
 			<div class="luaMenu">
 				<b>Lua</b>
-				<form class="luaForm">
-					<a id="saveLuaLink" download="program.lua">Save</a>
-					<button id="copyLuaButton" type="button">Copy</button>
-				</form>
+				<div>
+					<BUTTON id="saveLuaButton" class="saveLuaButton">Save</BUTTON>
+					<BUTTON id="copyLuaButton" class="copyLuaButton">Copy</BUTTON>
+					<a id="saveLuaLink" download="program.lua" style="display:none;"></a>
+				</div>
 			</div>
 			<div class="luaContents">
 				<TEXTAREA id="luaTextArea" class="luaText" readonly="true"></TEXTAREA>
